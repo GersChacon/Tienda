@@ -8,7 +8,8 @@ body{
     padding: 80px 20px 0;
     background-color: bisque;
 }
-header{
+
+.header{
     position: fixed;
     background-color: blue;
     top: 0;
@@ -17,7 +18,7 @@ header{
     width: 100%;
 }
 
-aside{
+.aside{
     position: fixed;
     background-color: aquamarine;
     top: 80px;
@@ -30,7 +31,7 @@ aside h2{
     color: red;
 }
 
-section{
+.section{
     overflow-y: scroll;
     position: fixed;
     background-color: bisque;
@@ -40,7 +41,7 @@ section{
     width: 80%;
 }
 
-footer{
+.footer{
     position: fixed;
     left: 0;
     bottom: 0;
@@ -50,7 +51,7 @@ footer{
     background-color: yellow;
     color: red;
 }
-
+/*
 a{
     text-decoration: none;
     background-color: green;
@@ -61,7 +62,7 @@ a:hover{
     background-color: black;
     color: gray;
 }
-
+*/
 table{
     width: 80%;
 }
@@ -80,3 +81,45 @@ tbody tr:nth-child(even){
     background-color: gray;
     color: black;
 }
+
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 90px;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.nav-menu{
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+.nav-menu-item{
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    width: max-content;
+}
+
+.nav-menu-link{
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.nav-menu-link:hover{
+    background-color: #024070;
+    transition: 0.5s;
+}
+
