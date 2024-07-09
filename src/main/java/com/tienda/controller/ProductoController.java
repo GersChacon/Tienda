@@ -3,6 +3,8 @@ package com.tienda.controller;
 import com.tienda.domain.Producto;
 import com.tienda.service.ProductoService;
 import com.tienda.service.impl.FirebaseStorageServiceImpl;
+import com.tienda.domain.Categoria;
+import com.tienda.service.CategoriaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,13 +21,19 @@ import org.springframework.web.multipart.MultipartFile;
 public class ProductoController {
     
     @Autowired
+    private CategoriaService categoriaService;
+    
+    @Autowired
     private ProductoService productoService;
 
     @GetMapping("/listado")
     public String inicio(Model model) {
+        var categorias = categoriaService.getCategorias(true);
+        
         var productos = productoService.getProductos(false);
         model.addAttribute("productos", productos);
         model.addAttribute("totalProductos", productos.size());
+        model.addAttribute("categorias",categorias);
         return "/producto/listado";
     }
     
@@ -60,8 +68,10 @@ public class ProductoController {
 
     @GetMapping("/modificar/{idProducto}")
     public String productoModificar(Producto producto, Model model) {
+        var categorias = categoriaService.getCategorias(true);
         producto = productoService.getProducto(producto);
         model.addAttribute("producto", producto);
+        model.addAttribute("categorias",categorias);
         return "/producto/modifica";
     }
 }
