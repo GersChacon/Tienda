@@ -42,7 +42,7 @@ CREATE TABLE techshop.usuario (
   password varchar(512) NOT NULL,
   nombre VARCHAR(20) NOT NULL,
   apellidos VARCHAR(30) NOT NULL,
-  correo VARCHAR(25) NULL,
+  correo VARCHAR(50) NULL,
   telefono VARCHAR(15) NULL,
   ruta_imagen varchar(1024),
   activo boolean,
